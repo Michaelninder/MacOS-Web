@@ -78,6 +78,13 @@ body {
 
 
 
+.doc-item.tooltip {
+    visibility: hidden;
+}
+
+.doc-item:hover.tooltip {
+    visibility: visible;
+}
 
 
 
@@ -114,4 +121,8 @@ body {
     color: var(--menu-bar-hover-color);
     text-decoration: none;
     margin-inline: 10px;
+}
+
+.hidden {
+    visibility: hidden;
 }
