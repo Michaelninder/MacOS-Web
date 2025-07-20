@@ -59,20 +59,20 @@
   .doc-item a {
     text-decoration: none;
     color: inherit;
+    display: block;
   }
   
-  .doc-item {
-    --doc-item-border-size: 1px;
+  .doc-item img {
+    width: 32px;
+    height: 32px;
+    display: block;
     border-radius: 12px;
-    border: var(--doc-item-border-size) solid var(--doc-item-border-color);
-    padding: 10px;
-    margin-bottom: 5px;
-    transition-duration: 0.15s;
+    border: 1px solid var(--doc-item-border-color);
+    transition: all 0.15s ease-in-out;
   }
   
-  .doc-item:hover {
-    --doc-item-border-size: 2px;
-    transition-duration: 0.15s;
+  .doc-item:hover img {
+    transform: translateY(-5px);
   }
   
   .doc-link {
@@ -85,6 +85,28 @@
   
   .doc-item:hover.tooltip {
     visibility: visible;
+  }
+  
+  .launching img {
+    animation: launch 0.8s ease-out;
+  }
+  
+  @keyframes launch {
+    0% {
+      transform: translateY(0) scale(1);
+    }
+    25% {
+      transform: translateY(-20px) scale(1.1);
+    }
+    50% {
+      transform: translateY(0) scale(1);
+    }
+    75% {
+      transform: translateY(-10px) scale(1.05);
+    }
+    100% {
+      transform: translateY(0) scale(1);
+    }
   }
   
   /* --- Menu Bar --- */
