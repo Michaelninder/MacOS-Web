@@ -2,23 +2,18 @@
     --bg-color: #000000;    
     --text-color: #fff;
 
-
-
     --doc-bg-color: rgba(125, 125, 125, 0.27); 
     --doc-border-color: rgba(125, 125, 125, 0.3);
     --doc-border: 1px solid var(--doc-border-color);
     --doc-item-border-color: #fff;
     --doc-item-color: #fff;
 
-
     --menu-bar-bg-color: rgba(208, 208, 208, 0.494);
     --menu-bar-color: #fff;
     --menu-bar-hover-color: #6cf3ff;
-
-
+    
     --background: var(--bg-color);
 }
-
     
 * {
     margin: 0;
@@ -30,8 +25,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text-color);
 }
-
-
 
 /* --- Doc --- */
 .doc {
@@ -66,17 +59,22 @@ body {
 }
 
 .doc-item {
+    --doc-item-border-size: 1px;
     border-radius: 12px;
-    border: 2px solid var(--doc-item-border-color);
+    border: var(--doc-item-border-size) solid var(--doc-item-border-color);
     padding: 10px;
     margin-bottom: 5px;
+    transition-duration: 01.5s;
+}
+
+.doc-item:hover {
+    --doc-item-border-size: 5px;
+    transition-duration: 0.15s;
 }
 
 .doc-link {
     color: (--doc-item-color);
 }
-
-
 
 .doc-item.tooltip {
     visibility: hidden;
@@ -85,11 +83,6 @@ body {
 .doc-item:hover.tooltip {
     visibility: visible;
 }
-
-
-
-
-
 
 /* --- Menu Bar --- */
 .menu-bar {
