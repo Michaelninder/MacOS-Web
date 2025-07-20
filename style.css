@@ -10,8 +10,8 @@
     --doc-item-hover-modifier: 15px;
     --doc-item-size: 40px;
 
-    --menu-bar-bg-color: rgba(208, 208, 208, 0.494);
-    --menu-bar-color: #fff;
+    --menu-bar-bg-color: rgba(208, 208, 208, 0.85);
+    --menu-bar-color: #000000;
     --menu-bar-hover-color: #6cf3ff;
 
     --background: var(--bg-color);
