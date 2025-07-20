@@ -1,91 +1,94 @@
 :root {
-    --bg-color: #000000;    
+    --bg-color: #000000;
     --text-color: #fff;
-
-    --doc-bg-color: rgba(125, 125, 125, 0.27); 
+  
+    --doc-bg-color: rgba(125, 125, 125, 0.27);
     --doc-border-color: rgba(125, 125, 125, 0.3);
     --doc-border: 1px solid var(--doc-border-color);
     --doc-item-border-color: #fff;
     --doc-item-color: #fff;
-
+  
     --menu-bar-bg-color: rgba(208, 208, 208, 0.494);
     --menu-bar-color: #fff;
     --menu-bar-hover-color: #6cf3ff;
-    
+  
     --background: var(--bg-color);
-}
-    
-* {
+  }
+  
+  * {
     margin: 0;
     padding: 0;
-}
-
-body {
+  }
+  
+  body {
     background: var(--background);
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text-color);
-}
-
-/* --- Doc --- */
-.doc {
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* --- Doc --- */
+  .doc {
     position: fixed;
     bottom: 10px;
-    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: var(--doc-bg-color);
     border-radius: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 8px 10px;
+    width: fit-content;
     max-width: 90%;
-
+  
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: var(--doc-border);
-    margin-inline: 35px;
-}
-
-.doc ul {
+  }
+  
+  .doc ul {
     list-style: none;
     display: flex;
     padding-block: 1px;
     gap: 10px;
-}
+  }
   
-.doc-item a {
+  .doc-item a {
     text-decoration: none;
     color: inherit;
-}
-
-.doc-item {
+  }
+  
+  .doc-item {
     --doc-item-border-size: 1px;
     border-radius: 12px;
     border: var(--doc-item-border-size) solid var(--doc-item-border-color);
     padding: 10px;
     margin-bottom: 5px;
-    transition-duration: 01.5s;
-}
-
-.doc-item:hover {
+    transition-duration: 0.15s;
+  }
+  
+  .doc-item:hover {
     --doc-item-border-size: 5px;
     transition-duration: 0.15s;
-}
-
-.doc-link {
-    color: (--doc-item-color);
-}
-
-.doc-item.tooltip {
+  }
+  
+  .doc-link {
+    color: var(--doc-item-color);
+  }
+  
+  .doc-item.tooltip {
     visibility: hidden;
-}
-
-.doc-item:hover.tooltip {
+  }
+  
+  .doc-item:hover.tooltip {
     visibility: visible;
-}
-
-/* --- Menu Bar --- */
-.menu-bar {
+  }
+  
+  /* --- Menu Bar --- */
+  .menu-bar {
     display: flex;
     position: fixed;
     top: 0;
@@ -93,33 +96,33 @@ body {
     background: var(--menu-bar-bg-color);
     color: var(--menu-bar-color);
     transition-duration: 1s;
-}
-
-.menu-bar ul {
+  }
+  
+  .menu-bar ul {
     list-style: none;
     display: flex;
     padding-block: 1px;
     gap: 1px;
     color: var(--menu-bar-color);
-}
-
-.menu-bar a {
+  }
+  
+  .menu-bar a {
     color: var(--menu-bar-color);
     text-decoration: none;
     margin-inline: 10px;
     transition-duration: 1s;
-}
-
-.menu-bar.seperator {
+  }
+  
+  .menu-bar.seperator {
     color: var(--doc-border-color);
-}
-
-.menu-bar a:hover {
+  }
+  
+  .menu-bar a:hover {
     color: var(--menu-bar-hover-color);
     text-decoration: none;
     margin-inline: 10px;
-}
-
-.hidden {
+  }
+  
+  .hidden {
     visibility: hidden;
-}
+  }
