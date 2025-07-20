@@ -5,7 +5,7 @@
     --doc-bg-color: rgba(125, 125, 125, 0.27);
     --doc-border-color: rgba(125, 125, 125, 0.3);
     --doc-border: 1px solid var(--doc-border-color);
-    --doc-item-border-color: #fff;
+    --doc-item-border-color: rgba(128, 128, 128, 0.45);
     --doc-item-color: #fff;
   
     --menu-bar-bg-color: rgba(208, 208, 208, 0.494);
@@ -69,10 +69,6 @@
     border-radius: 12px;
     border: 1px solid var(--doc-item-border-color);
     transition: all 0.15s ease-in-out;
-  }
-  
-  .doc-item:hover img {
-    transform: translateY(-5px);
   }
   
   .doc-link {
