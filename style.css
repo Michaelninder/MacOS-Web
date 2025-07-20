@@ -1,129 +1,148 @@
 :root {
     --bg-color: #000000;
     --text-color: #fff;
-  
+
     --doc-bg-color: rgba(125, 125, 125, 0.27);
     --doc-border-color: rgba(125, 125, 125, 0.3);
     --doc-border: 1px solid var(--doc-border-color);
     --doc-item-border-color: rgba(128, 128, 128, 0.45);
     --doc-item-color: #fff;
-  
+    --doc-item-hover-modifier: 15px;
+    --doc-item-size: 40px;
+
     --menu-bar-bg-color: rgba(208, 208, 208, 0.494);
     --menu-bar-color: #fff;
     --menu-bar-hover-color: #6cf3ff;
-  
+
     --background: var(--bg-color);
-  }
-  
-  * {
+}
+
+* {
     margin: 0;
     padding: 0;
-  }
-  
-  body {
+}
+
+body {
     background: var(--background);
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text-color);
     background-size: cover;
     background-position: center;
-  }
-  
-  /* --- Doc --- */
-  .doc {
+}
+
+/* --- Doc --- */
+.doc {
     position: fixed;
     bottom: 5px;
     left: 50%;
     transform: translateX(-50%) scale(1.05);
     background-color: var(--doc-bg-color);
-    border-radius: 16px;
+    border-radius: 18px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding-top: 10px;
-    padding-inline: 10px;
+    align-items: flex-end;
+    padding-top: 5px;
+    padding-inline: 6px;
     padding-bottom: 12px;
     width: fit-content;
     max-width: 90%;
-  
+    bottom: 0;
+
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: var(--doc-border);
-  }
-  
-  .doc ul {
+}
+
+.doc ul {
     list-style: none;
     display: flex;
     padding-block: 1px;
     gap: 10px;
-  }
-  
-  .doc-item {
+}
+
+.doc-item {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 3px;
-    margin-bottom: 7px;
-  }
-  
-  .doc-item a {
+    transition: all 0.15s ease-in-out;
+}
+
+.doc-item a {
     text-decoration: none;
     color: inherit;
     display: block;
-  }
-  
-  .doc-item img {
-    width: 32px;
-    height: 32px;
+}
+
+.doc-item img {
+    width: var(--doc-item-size);
+    height: var(--doc-item-size);
     display: block;
     border-radius: 12px;
     border: 1px solid var(--doc-item-border-color);
-    transition: all 0.15s ease-in-out;
-  }
-  
-  .doc-item img:hover {
-    width: 40px;
-    height: 40px;
-    margin-top: -8px;
-    margin-bottom: -8px;
-  }
-  
-  .doc-link {
+    transition:
+        transform 0.15s ease-in-out,
+        width 0.15s ease-in-out,
+        height 0.15s ease-in-out;
+        ottom: 0;
+}
+
+.doc-item img:hover {
+    width: calc(var(--doc-item-size) + var(--doc-item-hover-modifier));
+    height: calc(var(--doc-item-size) + var(--doc-item-hover-modifier));
+    transform: translateY(calc(-1 * var(--doc-item-hover-modifier) / 2));
+}
+
+.doc-link {
     color: var(--doc-item-color);
-  }
-  
-  .doc-item.tooltip {
+}
+
+.doc-item .tooltip {
     visibility: hidden;
-  }
-  
-  .doc-item:hover.tooltip {
+    position: absolute;
+    top: calc(-25px - (var(--doc-item-hover-modifier) / 2));
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0;
+    transition:
+        opacity 0.2s ease-in-out,
+        visibility 0.2s ease-in-out,
+        top 0.15s ease-in-out;
+}
+
+.doc-item:hover .tooltip {
     visibility: visible;
-  }
-  
-  .launching img {
+    opacity: 1;
+}
+
+.launching img {
     animation: launch 0.8s ease-out;
-  }
-  
-  @keyframes launch {
+}
+
+@keyframes launch {
     0% {
-      transform: translateY(0) scale(1);
+        transform: translateY(0) scale(1);
     }
     25% {
-      transform: translateY(-20px) scale(1.1);
+        transform: translateY(-20px) scale(1.1);
     }
     50% {
-      transform: translateY(0) scale(1);
+        transform: translateY(0) scale(1);
     }
     75% {
-      transform: translateY(-10px) scale(1.05);
+        transform: translateY(-10px) scale(1.05);
     }
     100% {
-      transform: translateY(0) scale(1);
+        transform: translateY(0) scale(1);
     }
-  }
-  
-  .doc-item.open::after {
+}
+
+.doc-item.open::after {
     content: "";
     display: block;
     width: 4px;
@@ -131,10 +150,10 @@
     background-color: #ffffff;
     border-radius: 50%;
     margin-top: 4px;
-  }
-  
-  /* --- Menu Bar --- */
-  .menu-bar {
+}
+
+/* --- Menu Bar --- */
+.menu-bar {
     display: flex;
     position: fixed;
     top: 0;
@@ -142,33 +161,33 @@
     background: var(--menu-bar-bg-color);
     color: var(--menu-bar-color);
     transition-duration: 1s;
-  }
-  
-  .menu-bar ul {
+}
+
+.menu-bar ul {
     list-style: none;
     display: flex;
     padding-block: 1px;
     gap: 1px;
     color: var(--menu-bar-color);
-  }
-  
-  .menu-bar a {
+}
+
+.menu-bar a {
     color: var(--menu-bar-color);
     text-decoration: none;
     margin-inline: 10px;
     transition-duration: 1s;
-  }
-  
-  .menu-bar.seperator {
+}
+
+.menu-bar.seperator {
     color: var(--doc-border-color);
-  }
-  
-  .menu-bar a:hover {
+}
+
+.menu-bar a:hover {
     color: var(--menu-bar-hover-color);
     text-decoration: none;
     margin-inline: 10px;
-  }
-  
-  .hidden {
+}
+
+.hidden {
     visibility: hidden;
-  }
+}
