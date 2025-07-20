@@ -5,7 +5,8 @@
 
 
     --doc-bg-color: rgba(125, 125, 125, 0.27); 
-    --doc-border: 1px solid rgba(125, 125, 125, 0.3);
+    --doc-border-color: rgba(125, 125, 125, 0.3);
+    --doc-border: 1px solid var(--doc-border-color);
     --doc-item-border-color: #fff;
     --doc-item-color: #fff;
 
@@ -36,15 +37,13 @@ body {
 .doc {
     position: fixed;
     bottom: 10px;
-    left: 0;
-    right: 0;
     margin: 0 auto;
     background-color: var(--doc-bg-color);
     border-radius: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 8px 24px;
+    padding: 8px 10px;
     max-width: 90%;
 
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -115,6 +114,10 @@ body {
     text-decoration: none;
     margin-inline: 10px;
     transition-duration: 1s;
+}
+
+.menu-bar.seperator {
+    color: var(--doc-border-color);
 }
 
 .menu-bar a:hover {
