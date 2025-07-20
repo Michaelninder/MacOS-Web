@@ -69,6 +69,17 @@
     border-radius: 12px;
     border: 1px solid var(--doc-item-border-color);
     transition: all 0.15s ease-in-out;
+
+    bottom: 5px;
+    top: 0px;
+  }
+  
+  .doc-item img:hover {
+    width: 36px;
+    height: 36px;
+    
+    bottom: 5px;
+    top: 0px;
   }
   
   .doc-link {
