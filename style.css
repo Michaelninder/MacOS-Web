@@ -7,7 +7,7 @@
     --doc-border: 1px solid var(--doc-border-color);
     --doc-item-border-color: rgba(128, 128, 128, 0.45);
     --doc-item-color: #fff;
-    --doc-item-hover-modifier: 15px;
+    --doc-item-hover-modifier: 8px;
     --doc-item-size: 40px;
 
     --menu-bar-bg-color: rgba(208, 208, 208, 0.85);
@@ -82,16 +82,17 @@ body {
     border-radius: 12px;
     border: 1px solid var(--doc-item-border-color);
     transition:
-        transform 0.15s ease-in-out,
-        width 0.15s ease-in-out,
-        height 0.15s ease-in-out;
-        ottom: 0;
+        transform 0.66s ease-in-out,
+        width 0.66s ease-in-out,
+        height 0.66s ease-in-out;
+    bottom: 0;
 }
 
 .doc-item img:hover {
     width: calc(var(--doc-item-size) + var(--doc-item-hover-modifier));
     height: calc(var(--doc-item-size) + var(--doc-item-hover-modifier));
     transform: translateY(calc(-1 * var(--doc-item-hover-modifier) / 2));
+    transition: 0.25s ease-in-out;
 }
 
 .doc-link {
